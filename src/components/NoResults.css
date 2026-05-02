@@ -1,0 +1,21 @@
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+}
+
+.no-results__icon { font-size: 3.5rem; }
+
+.no-results__title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+.no-results__body {
+  max-width: 400px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}

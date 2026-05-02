@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap');
+ 
+/* ── Page shell ─────────────────────────────────────────────────────────── */
+.favourites-page {
+  min-height: 100vh;
+  color: #e8eaf0;
+
+  padding: 3rem 1.5rem 5rem;
+  background: rgba(8, 12, 20, 0.85);
+}
+ 
+/* ── Page header ────────────────────────────────────────────────────────── */
+.favourites-page__header {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 
+.favourites-page__title {
+ font-family: 'Syne', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #e8eaf0;
+}
+ 
+.favourites-page__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  background: rgba(8, 12, 20, 0.85);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 999px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+ 
+/* ── Movie grid ─────────────────────────────────────────────────────────── */
+.favourites-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+ 
+/* ── Movie card ─────────────────────────────────────────────────────────── */
+.fav-card {
+  background: rgba(8, 12, 20, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+ 
+.fav-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(108, 99, 255, 0.2);
+}
+ 
+.fav-card__img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+ 
+.fav-card__img-placeholder {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background:  rgba(8, 12, 20, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+ 
+.fav-card__body {
+  padding: 0.7rem;
+}
+ 
+.fav-card__title {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+  color: #e8eaf0;
+}
+ 
+.fav-card__year {
+  font-size: 0.75rem;
+  color: #8891a4;
+}
+ 
+.fav-card__badge {
+  display: inline-block;
+  background: rgba(8, 12, 20, 0.85);
+  color: #6c63ff;
+  font-size: 0.65rem;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-top: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+ 
+/* Remove button */
+.fav-card__remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(8, 12, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e8eaf0;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+  backdrop-filter: blur(4px);
+}
+ 
+.fav-card:hover .fav-card__remove {
+  opacity: 1;
+}
+ 
+.fav-card__remove:hover {
+  background: rgba(220, 50, 50, 0.75);
+}
+ 
+/* ── Empty state ────────────────────────────────────────────────────────── */
+.favourites-page__empty {
+  text-align: center;
+  padding: 6rem 0;
+  color: #8891a4;
+}
+ 
+.favourites-page__empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+ 
+.favourites-page__empty-title {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e8eaf0;
+  margin-bottom: 0.5rem;
+}
+ 
+.favourites-page__empty-text {
+  font-size: 0.9rem;
+  color: #8891a4;
+  margin-bottom: 1.5rem;
+}
+ 
+.favourites-page__empty-link {
+  display: inline-block;
+  background: #6c63ff;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  font-family: 'Syne', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+ 
+.favourites-page__empty-link:hover {
+  background: #7b74ff;
+}

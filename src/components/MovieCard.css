@@ -1,0 +1,88 @@
+.movie-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+/* Poster */
+.movie-card__poster-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  background: var(--color-bg-elevated);
+}
+
+.movie-card__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.movie-card:hover .movie-card__poster { transform: scale(1.05); }
+
+/* Favourite button */
+.movie-card__fav-btn {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  z-index: 2;
+}
+.movie-card__fav-btn:hover { background: rgba(229,9,20,0.8); transform: scale(1.15); }
+.movie-card__fav-btn--active { background: rgba(229,9,20,0.7); }
+
+/* Type badge */
+.movie-card__badge {
+  position: absolute;
+  bottom: var(--space-2);
+  left: var(--space-2);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+.movie-card__badge--movie   { background: var(--color-primary); color: #fff; }
+.movie-card__badge--series  { background: #6366f1;              color: #fff; }
+.movie-card__badge--episode { background: #0ea5e9;              color: #fff; }
+
+/* Card text */
+.movie-card__info {
+  padding: var(--space-3) var(--space-4);
+}
+.movie-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  margin-bottom: var(--space-1);
+}
+.movie-card__year {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}

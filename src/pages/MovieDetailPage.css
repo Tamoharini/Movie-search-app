@@ -1,0 +1,204 @@
+.detail-page {
+  background: black !important;
+  color:white !important;
+  min-height: 100vh;
+
+}
+
+.detail-page--error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* Back button */
+.detail-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background:black;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color:yellow;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-8);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.detail-page__back:hover {
+  background: var(--color-border);
+  color: yellow;
+  border-color: var(--color-text-muted);
+}
+
+/* Card layout */
+.detail-card {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;;
+  background:black;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+/* Poster column */
+.detail-card__poster-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.detail-card__poster {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  
+}
+
+.detail-card__fav-btn {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.detail-card__fav-btn:hover {
+  background: rgba(229,9,20,0.15);
+  border-color: var(--color-primary);
+}
+.detail-card__fav-btn--active {
+  background: rgba(229,9,20,0.2);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Info column */
+.detail-card__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.detail-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: 1rem;
+}
+
+.detail-card__tag {
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.detail-card__tag--type.detail-card__tag--movie   { background: rgba(229,9,20,0.15);  border-color: var(--color-primary); color: var(--color-primary); }
+.detail-card__tag--type.detail-card__tag--series  { background: rgba(99,102,241,0.15); border-color: #6366f1;             color: #a5b4fc; }
+.detail-card__tag--type.detail-card__tag--episode { background: rgba(14,165,233,0.15); border-color: #0ea5e9;             color: #7dd3fc; }
+
+.detail-card__genre {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom:1.25rem;
+}
+
+/* Sections */
+.detail-card__section {
+  margin-bottom: 1.5rem;  /* ← space between sections */
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.detail-card__section:first-of-type { border-top: none; padding-top: 0; }
+
+.detail-card__section-title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.detail-card__plot {
+  color: var(--color-text);
+  line-height: 1.75;
+  font-size: var(--font-size-sm);
+}
+
+/* Cast/crew definition list */
+.detail-card__dl {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+.detail-card__dl dt {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+.detail-card__dl dd {
+  color: var(--color-text);
+}
+
+/* Ratings */
+.detail-card__ratings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;              /* ← space between rating badges */
+  margin-top: 0.5rem;
+}
+
+.detail-card__rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 140px;
+}
+
+.detail-card__rating-icon { font-size: 1.5rem; }
+
+.detail-card__rating-source {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.detail-card__rating-value {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detail-card {
+    grid-template-columns: 1fr;
+    padding: var(--space-5);
+    gap: var(--space-6);
+  }
+  .detail-card__poster {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+  .detail-card__poster-col { align-items: center; }
+}
+
+

@@ -1,0 +1,36 @@
+.typefilter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.typefilter__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.typefilter__select {
+  padding: var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+  background: var(--color-bg-elevated);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239090a8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: 2.25rem;
+  transition: border-color 0.2s;
+}
+.typefilter__select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+.typefilter__select option {
+  background: var(--color-bg-card);
+}
