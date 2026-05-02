@@ -14,7 +14,6 @@ A full-featured movie search application built with **React** and the **OMDB API
 | 🎬 **Movie Detail** | Full detail view: poster, plot, cast, director, ratings (IMDb / RT / Metacritic), awards |
 | ❤️ **Favourites** | Add/remove favourites; persisted in `localStorage` |
 | ⚠️ **Error Handling** | Friendly messages for API errors, no results, and 404 routes |
-| 🔗 **Shareable URLs** | Search state (query, type, page) synced to URL query params |
 | ♿ **Accessible** | ARIA labels, keyboard navigation, focus management |
 
 ---
@@ -29,13 +28,4 @@ A full-featured movie search application built with **React** and the **OMDB API
 
 ---
 
-## 🗺️ Routes
 
-| Path | Page |
-|---|---|
-| `/` | Search Page |
-| `/movie/:imdbID` | Movie Detail Page |
-| `/favorites` | Favourites Page |
-| `*` | 404 Not Found |
-
----
